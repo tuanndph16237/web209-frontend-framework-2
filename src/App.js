@@ -1,9 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './App.css';
+import TicTacToe from './Tic-Tac-Toe/TicTacToe';
 
 function App() {
-  const [status, setStatus] = useState(false)
-  return <button onClick={()=> setStatus(!status)}>{status ? "You loved it" : "love it"}</button>
+  
+  return (
+   <div className='App'>
+    <TicTacToe/>
+   </div>
+  );
 
 }
 
