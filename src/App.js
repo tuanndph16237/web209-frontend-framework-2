@@ -1,10 +1,38 @@
-import React, {useState} from 'react'
-import './App.css';
+import React from "react";
 
+
+import styled from "styled-components";
+import Square from "./components/Square";
 function App() {
-  const [status, setStatus] = useState(false)
-  return <button onClick={()=> setStatus(!status)}>{status ? "You loved it" : "love it"}</button>
-
+  return (
+    <Container>
+      <Board>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+        <Square/>
+      </Board>
+    </Container>
+  );
 }
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
+const Board = styled.div`
+  background: lightgray;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-width: 250px;
+  margin: auto;
+`;
 export default App;
